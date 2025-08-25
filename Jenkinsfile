@@ -9,7 +9,12 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                echo 'npm --version'
+                sh '''
+                    ls -la
+                    node --version
+                    npm --version
+                    ls -la
+                '''
             }
         }
     }
